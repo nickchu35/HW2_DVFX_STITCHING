@@ -14,7 +14,16 @@ end
 disp(['Reading images finished... ' int2str(size(file,1)) ' images found.']);
 toc;
 %% Feature Detection
-harris(img{1}, 2, 1000, 2, 1) % harris(im, sigma, thresh, radius, disp)
+tic;
+corner_bin_im = zeros(size(img{1},1),size(img{1},2));
+rows = [];
+cols = [];
+[corner_bin_im rows cols] = harris(img{1}, 2, 1000, 2, 1); % harris(im, sigma, thresh, radius, disp)
+figure;
+imshow(corner_bin_im);
+disp('rows : '); disp(size(rows,1));
+disp('cols : '); disp(size(cols,1));
+toc;
 %% Feature Descriptor
 %% Image Matching
 %% Panoramas

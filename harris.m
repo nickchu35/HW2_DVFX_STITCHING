@@ -17,6 +17,8 @@
 function [cim, r, c] = harris(im, sigma, thresh, radius, disp)
     narginchk(2,5); % checking number of inputs
     
+    im = rgb2gray(im); % transform to grayscale
+    
     dx = [-1 0 1; -1 0 1; -1 0 1]; % Derivative masks
     dy = dx';
     
@@ -41,7 +43,7 @@ function [cim, r, c] = harris(im, sigma, thresh, radius, disp)
         % match the dilated image and are also greater than the threshold.
         sze = 2*radius+1;                   % Size of mask
         mx = ordfilt2(cim,sze^2,ones(sze)); % Grey-scale dilate
-        cim = (cim==mx)&(cim>thresh);       % Find maxima
+        cim = (cim == mx)&(cim > thresh);   % Find maxima
 	
         [r,c] = find(cim);                  % Find row,col coordinates
         
