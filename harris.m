@@ -7,14 +7,13 @@
 %            radius - radius of region considered in non-maximal suppression (optional). Typical values to use might be 1-3.
 %            disp   - optional flag (0 or 1) indicating whether you want to display corners overlayed on the original image. This can be useful for parameter tuning.
 % Returns:
-%            cim    - binary image marking corners.
-%            r      - row coordinates of corner points.
-%            c      - column coordinates of corner points.
+%            cim        - binary image marking corners.
+%            features   - coordinates of feature points.
 %
 % If thresh and radius are omitted from the argument list 'cim' is returned
 % as a raw corner strength image and r and c are returned empty.
 
-function [cim, r, c] = harris(im, sigma, thresh, radius, disp)
+function [cim, features] = harris(im, sigma, thresh, radius, disp)
     narginchk(2,5); % checking number of inputs
     
     im = rgb2gray(im); % transform to grayscale
@@ -46,11 +45,15 @@ function [cim, r, c] = harris(im, sigma, thresh, radius, disp)
         cim = (cim == mx)&(cim > thresh);   % Find maxima
 	
         [r,c] = find(cim);                  % Find row,col coordinates
-        
-        if nargin==5 && disp      % overlay corners on original image
+        features = zeros(size(r,1),2);
+        for count = 1:size(r,1)
+            features(count,1) = r(count);
+            features(count,2) = c(count);
+        end
+        if nargin == 5 && disp      % overlay corners on original image
             figure, imagesc(im), axis image, colormap(gray), hold on
             plot(c,r,'ys'), title('corners detected');
         end
     else  % leave cim as a corner strength image and make r and c empty.
-        r = []; c = [];
+        features = [];
     end
