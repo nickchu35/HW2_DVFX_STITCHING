@@ -14,6 +14,7 @@ end
 disp(['Reading images finished... ' int2str(size(file,1)) ' images found.']);
 toc;
 %% Feature Detection
+disp('Running Harris Corner Detection...');
 tic;
 corner_bin_im = zeros(size(img{1},1),size(img{1},2));
 rows = [];
@@ -23,7 +24,10 @@ figure;
 imshow(corner_bin_im);
 disp('rows : '); disp(size(rows,1));
 disp('cols : '); disp(size(cols,1));
+disp('Harris Corner Detection... Done');
 toc;
 %% Feature Descriptor
-%% Image Matching
+%% Feature Matching
+%% Reprojection to cylinder
+%% Image Alignment
 %% Panoramas
