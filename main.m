@@ -32,7 +32,7 @@ disp('Harris Corner Detection done!');
 toc;
 %% Feature Descriptor
 %% Feature Matching
-%% Image Alignment (matching, find transformation matrix)
+%% Image Alignment (matching, find transformation matrix, RANSAC)
 
 
 %% Panoramas
