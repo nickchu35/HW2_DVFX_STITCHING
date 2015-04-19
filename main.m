@@ -2,6 +2,7 @@
 clear;
 clc;
 %% Main file for HW2 - Image Stitching
+N = 0; % number_of_images
 %% Read in photos, if already have cylindrical photos, set make_new_cylindrical to false
 make_new_cylindrical = false;
 cylin_img = {};
@@ -19,6 +20,7 @@ else
     disp('Reading cylindrical photos finished...');
     toc;
 end
+N = size(cylin_img, 2);
 %% Feature Detection
 disp('Running Harris Corner Detection...');
 tic;
@@ -31,8 +33,19 @@ disp('number of feature points: '); disp(size(feature_points,1));
 disp('Harris Corner Detection done!');
 toc;
 %% Feature Descriptor
+
 %% Feature Matching
-%% Image Alignment (matching, find transformation matrix, RANSAC)
+
+%% RANSAC, (use it to get dependable inliers)
+
+%% Image Alignment (matching, find transformation matrix)
+% if we have N photos, we will get N-1 trans matrix
+trans_matrix = {}
+for i = 1:N-1
+    trans_matrix{i} = least_squares_pairwise_alignment( feature_points1, feature_points2 );
+end
+
+%% Blending(Panoramas)
 
 
-%% Panoramas
+
