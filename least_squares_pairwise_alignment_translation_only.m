@@ -1,4 +1,4 @@
-%% To get the transformation matrix (translation + rotation) of the feature points.
+%% To get the transformation matrix (translation) of the feature points.
 % we only need the matched feature points, don't need the images
 function trans_matrix = least_squares_pairwise_alignment_translation_only(feature_points1, feature_points2)
     % put them into the forms of Ax = b
