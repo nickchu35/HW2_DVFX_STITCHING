@@ -1,60 +1,59 @@
 %% RANSAC function
-%   P : probability that wew want to achieve
+% pick 2 points --> we can solve a translation transform matrix --> apply
+% to all points --> check error (by minus? or points by points?) --> get
+% the best set of inliers --> use them to solve matrix AGAIN!
+%   P : probability that we want to achieve
 %   p : probability of outliers
 %   n : random n samples
 %   k : number of trials
-function maxMatch = ransac(match, pos1, orient1, desc1, pos2, orient2, desc2)
-	p = 0.5;
+function inlier_trans = ransac(pos1, pos2)
+	p = 0.5; % guess
 	n = 2;
 	P = 0.9999;
-    k = ceil(log(1-P)/log(1-p^n));
+    k = ceil(log(1-P)/log(1-p^n)); % run k times
     threshold = 10;	% FIXME
+    N = size(pos1,1); % number of matched feature points
     
-    N = size(match, 1);
-
-    maxMatch = [];
-    if N <= n
-        maxMatch = match;
-	return;
-    end
-
-    % run k times
-    for trial = 1:k
-        % draw n samples randomly
-        rp = randperm(N);     % shuffle the N number
-        sampleIdx = rp(1:n);  % pick the first n numbers --> 
-
-        sampleMatch = match(sampleIdx, :);
-        otherMatch = match;
-        otherMatch(sampleIdx, :) = [];
-
-        %sampleDesc1 = desc1(sampleMatch(:,1), :);
-        %sampleDesc2 = desc2(sampleMatch(:,2), :);
-        %othersDesc1 = desc1(otherMatch(:,1), :);
-        %othersDesc2 = desc2(otherMatch(:,2), :);
-        samplePos1 = pos1(sampleMatch(:,1), :);
-        samplePos2 = pos2(sampleMatch(:,2), :);
-        othersPos1 = pos1(otherMatch(:,1), :);
-        othersPos2 = pos2(otherMatch(:,2), :);
-
-        % fit parameters theta with these n samples
-        tmpMatch = [];
-        posDiff = samplePos1 - samplePos2;
-        theta = mean(posDiff);
-
-        %   for each of other N-n points, calcuate 
-        %   its distance to the fitted model, count the
-        %   number of inliner points, c
-        for i = 1:size(othersPos1, 1)
-    	    d = (othersPos1(i,:)-othersPos2(i,:)) - theta;
-    	    if sqrt(sum(d.^2)) < threshold
-                tmpMatch = [tmpMatch; otherMatch(i, :)];
+    best_set_num_array = [];
+    best_num_of_inliers = 0;
+    
+    for iteration = 1:k
+        shuffle_perm = randperm(N);
+        sample_id = shuffle_perm(1:n); % extract n random point index
+        sample_pos1 = zeros(n,2);
+        sample_pos2 = zeros(n,2);
+        for num = 1:n
+            sample_pos1(sample_id(num), :) = pos1(sample_id(num), :);
+            sample_pos2(sample_id(num), :) = pos2(sample_id(num), :);
+        end
+        
+        sample_trans = least_squares_pairwise_alignment_translation_only(sample_pos1,sample_pos2);
+        
+        % apply the trans to ALL points, count distance to points in pos2
+        inlier_num_array = [];
+        inlier_num_count = 0;
+        for s = 1:N
+            match_pos = [pos1(s,1) + sample_trans(1,3) pos1(s,2)+sample_trans(2,3)];
+            distance = ((match_pos(1,1)-pos2(s,1))^2 + (match_pos(9,2)-pos2(s,2))^2)^(0.5);
+            if distance < threshold
+                inlier_num_count = inlier_num_count + 1;
+                inlier_num_array(inlier_num_count) = s; % store the inlier number in pos
             end
         end
-        if size(tmpMatch, 1) > size(maxMatch, 1)
-            maxMatch = tmpMatch;
+        
+        disp(['Iteration ' num2str(k) ' number of inliers = ' num2str(inlier_num_count)]);
+        
+        if inlier_num_count > best_num_of_inliers
+            best_num_of_inliers = inlier_num_count;
+            best_set_num_array = inlier_num_array;
         end
-    end
-    % output theta with the largest c
+        
+    end 
+    
+    % found a good set of inliers --> use them to get a even better
+    % TRANSFORMATION MATRIX
+    inlier_pos1 = pos1(best_set_num_array(:),:);
+    inlier_pos2 = pos2(best_set_num_array(:),:);
+    inlier_trans = least_squares_pairwise_alignment_translation_only(inlier_pos1, inlier_pos2);
 end
 
