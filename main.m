@@ -36,15 +36,23 @@ toc;
 
 %% Feature Matching
 
-%% RANSAC, (use it to get dependable inliers)
+%% RANSAC, (use it to get dependable inliers and good transformation matrix)
+trans_matrix = {};
+for i = 1:N  % a trans matrix for every 2 matrix, last is the same one as first
+    pos1 = ;
+    pos2 = ;
+    if i == N
+        pos2 = pos ; % first img
+    end
+    trans_matrix{i} = ransac(pos2,pos1);
+end
 
 %% Image Alignment (matching, find transformation matrix)
 % if we have N photos, we will get N-1 trans matrix
-trans_matrix = {}
-for i = 1:N-1
-    trans_matrix{i} = least_squares_pairwise_alignment( feature_points1, feature_points2 );
-end
-
+% trans_matrix = {}
+% for i = 1:N-1
+%     trans_matrix{i} = least_squares_pairwise_alignment( feature_points1, feature_points2 );
+% end
 %% Blending(Panoramas)
 
 
