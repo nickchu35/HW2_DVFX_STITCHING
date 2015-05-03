@@ -22,20 +22,42 @@ else
 end
 N = size(cylin_img, 2);
 %% Feature Detection
-disp('Running Harris Corner Detection...');
+disp('Running Harris Corner Detection and SIFT Descriptor...');
 tic;
-corner_bin_im = zeros(size(cylin_img{1},1),size(cylin_img{1},2));
-[corner_bin_im feature_points] = harris(cylin_img{1}, 2, 1000, 2, 1); % harris(im, sigma, thresh, radius, disp)
-figure;
-imshow(corner_bin_im);
-%disp('number of feature points: '); disp(size(rows,1));
-disp('number of feature points: '); disp(size(feature_points,1));
-disp('Harris Corner Detection done!');
+for i = 1 : 2
+    corner_bin_im = zeros(size(cylin_img{i},1),size(cylin_img{i},2));
+    [corner_bin_im, feature_points] = harris(cylin_img{i}, 2, 1000, 2, 1); % harris(im, sigma, thresh, radius, disp)
+    figure;
+    imshow(corner_bin_im);
+    %disp('number of feature points: '); disp(size(rows,1));
+    disp('number of feature points: '); disp(size(feature_points,1));
+
+    %% Feature Descriptor
+    [pos, orient, desc] = descriptorSIFT(cylin_img{i}, feature_points(:,2), feature_points(:,1));
+    poss{i} = pos;
+    orients{i} = orient;
+    descs{i} = desc;
+end
+save('mat/poss.mat', 'poss');
+save('mat/orients.mat', 'orients');
+save('mat/descs.mat', 'descs');
+
+disp('Harris Corner Detection and SIFT Descriptor done!');
 toc;
-%% Feature Descriptor
-
 %% Feature Matching
+disp('Running Feature Matching...');
+tic;
+for i = 1 : (2-1)
+   match = featureMatching(descs{i}, descs{i+1}, poss{i}, poss{i+1});
+   x = match(:,2);
+   y = match(:,1);
+   plot(x, y, 'ys');
+   matchs{i} = match;
+end
+save('mat/matchs.mat', 'matchs');
 
+disp('Feature Matching done!');
+toc;
 %% RANSAC, (use it to get dependable inliers)
 
 %% Image Alignment (matching, find transformation matrix)
