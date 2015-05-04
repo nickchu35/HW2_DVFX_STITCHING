@@ -19,7 +19,7 @@ function cylin_img = make_new_cylindrical_photos()
     cylin_path = 'cylin_photos/cylin_';
     for k = 1 : size(file,1) 
         cylin_img{k} = cylinder_reproject(img{k}, size(img{k},2), size(img{k},1), focal_length);
-        imwrite(cylin_img{k},[cylin_path int2str(k) '.jpg'])
+        imwrite(cylin_img{k},[cylin_path int2str(k) '.bmp']) % don't use jpg!!
     end
     disp('Cylinder reprojection finished!');
     toc;

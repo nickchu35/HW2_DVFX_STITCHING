@@ -12,7 +12,7 @@ else
     disp('Reading in preprocessed cylindrical photos...');
     tic;
     dirName = 'cylin_photos';
-    file = dir([dirName '/' '*.jpg']);
+    file = dir([dirName '/' '*.bmp']); % don't use jpg
     tic;
     for k = 1 : size(file,1) 
         cylin_img{k}= imread([dirName '/' file(k).name]);
@@ -46,13 +46,14 @@ for i = 1:N  % a trans matrix for every 2 matrix, last is the same one as first
     end
     trans_matrix{i} = ransac(pos2,pos1);
 end
-
 %% Image Alignment (matching, find transformation matrix)
 % if we have N photos, we will get N-1 trans matrix
 % trans_matrix = {}
 % for i = 1:N-1
 %     trans_matrix{i} = least_squares_pairwise_alignment( feature_points1, feature_points2 );
 % end
+%% Bundle Adjustment of the matrix
+
 %% Blending(Panoramas)
 
 
