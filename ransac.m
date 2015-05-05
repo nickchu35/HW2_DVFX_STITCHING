@@ -6,7 +6,7 @@
 %   p : probability of inliers
 %   n : random n samples
 %   k : number of trials
-function inlier_trans = ransac(pos1, pos2)
+function inlier_trans = ransac(pos1, pos2) % (feature_right, feature_left)
 	p = 0.5; % guess
 	n = 2;
 	P = 0.9999;
@@ -30,7 +30,7 @@ function inlier_trans = ransac(pos1, pos2)
             sample_pos2(sample_id(num), :) = pos2(sample_id(num), :);
         end
         
-        sample_trans = least_squares_pairwise_alignment_translation_only(sample_pos1,sample_pos2);
+        sample_trans = least_squares_pairwise_alignment_translation_only(sample_pos1,sample_pos2); % (feature_right, feature_left)
 
         % apply the trans to ALL points, count distance to points in pos2
         inlier_num_array = [];

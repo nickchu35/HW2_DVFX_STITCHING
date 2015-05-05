@@ -51,8 +51,8 @@ function [cim, features] = harris(im, sigma, thresh, radius, disp)
             features(count,2) = c(count);
         end
         if nargin == 5 && disp      % overlay corners on original image
-            figure, imagesc(im), axis image, colormap(gray), hold on
-            plot(c,r,'ys'), title('corners detected');
+            % figure, imagesc(im), axis image, colormap(gray), hold on
+            % plot(c,r,'ys'), title('corners detected');
         end
     else  % leave cim as a corner strength image and make r and c empty.
         features = [];
