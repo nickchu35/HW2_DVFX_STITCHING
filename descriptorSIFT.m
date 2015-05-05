@@ -58,7 +58,6 @@ function [pos, orient, desc] = descriptorSIFT(im, featureX, featureY)
     hf_sz = floor(sz/2);
     g = fspecial('gaussian', [sz sz], sigma);
 
-    disp(numel(featureY));
     for k = 1:numel(featureY)
         % Histogram the gradient orientations for this keypoint weighted by the
         % gradient magnitude and the gaussian weighting mask.

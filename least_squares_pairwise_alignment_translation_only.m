@@ -1,7 +1,7 @@
 %% To get the transformation matrix (translation) of the feature points.
 % we only need the matched feature points, don't need the images
-function trans_matrix = least_squares_pairwise_alignment_translation_only(feature_points1, feature_points2)
-    % put them into the forms of Ax = b
+function trans_matrix = least_squares_pairwise_alignment_translation_only(feature_points1, feature_points2) % (feature_right, feature_left)
+    % put them into the forms of Ax = b, A is right image
     number_of_features = size(feature_points1,1);
     b = zeros(number_of_features * 2 + 1, 1); % b vector
     A = zeros(number_of_features * 2 + 1, 3); % A matrix
