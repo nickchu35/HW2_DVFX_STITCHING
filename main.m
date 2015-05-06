@@ -6,7 +6,9 @@ N = 0; % number_of_images
 %% Read in photos, if already have cylindrical photos, set make_new_cylindrical to false
 % control flags
 make_new_cylindrical = true;
-run_feature_detection_to_matching = false;
+run_feature_detection = true;
+run_feature_matching = true;
+feature_matching_filter_flag = 0.7;
 cylin_img = {};
 if make_new_cylindrical
     cylin_img = make_new_cylindrical_photos();
@@ -23,7 +25,7 @@ else
 end
 N = size(cylin_img, 2);
 %% Feature Detection and Feature Descriptor
-if run_feature_detection_to_matching
+if run_feature_detection
     disp('Running Harris Corner Detection and SIFT Descriptor...');
     tic;
     for i = 1 : 2
@@ -64,53 +66,46 @@ if run_feature_detection_to_matching
     save('mat/descs.mat', 'descs');
     disp('Harris Corner Detection and SIFT Descriptor done!');
     toc;
-    %% Feature Matching
+else
+    disp('Reading in preprocessed feature positions ...');
+    tic;
+    poss = struct2cell(load('mat/poss.mat'));
+    orients = struct2cell(load('mat/orients.mat'));
+    descs = struct2cell(load('mat/descs.mat'));
+    disp('Reading in preprocessed feature positions FINISHED!');
+    toc;    
+end
+%% Feature Matching
+if run_feature_matching
     disp('Running Feature Matching...');
     tic;
     for i = 1 : (2-1)
-        match = featureMatching(descs{i}, descs{i+1}, poss{i}, poss{i+1});
-%         x = match(:,1);
-%         y = match(:,2);
-%         figure, imagesc(cylin_img{i}), axis image, colormap(gray), hold on
-%         plot(poss{i}(x),poss{i}(y),'ys'), title('feature matching');
+        filter = size(cylin_img{i},2) * (1-feature_matching_filter_flag);
+        match = featureMatching(descs{i}, descs{i+1}, poss{i}, poss{i+1}, filter, cylin_img{i});
         matchs{i} = match;
     end
-    
-%     matchedPoints1 = poss{1}(matchs{1}(1:20, 1));
-%     matchedPoints2 = poss{2}(matchs{1}(1:20, 2));
-%     image1 = imread('test_photos/prtn_01.jpg');
-%     image2 = imread('test_photos/prtn_02.jpg');
-%     disp(class(int8(image1)));
-%     disp(class(matchedPoints1));
-%     figure; ax = axes;
-%     disp(class(ax));
-%     showMatchedFeatures(int8(image1),int8(image2),matchedPoints1,matchedPoints2,'montage','Parent',ax);
-%     title(ax, 'Candidate point matches');
-%     legend(ax, 'Matched points 1','Matched points 2');
-    show_matched_features(cylin_img{1}, cylin_img{2}, poss{1}, poss{2});
     
     save('mat/matchs.mat', 'matchs');
     disp('Feature Matching done!');
     toc;
 else
-    disp('Reading in preprocessed feature positions and matches...');
+    disp('Reading in preprocessed feature match points ...');
     tic;
-    poss = struct2cell(load('mat/poss.mat'));
-    orients = struct2cell(load('mat/orients.mat'));
-    descs = struct2cell(load('mat/descs.mat'));
     matchs = struct2cell(load('mat/matchs.mat'));
-    disp('Reading in preprocessed feature positions and matches FINISHED!');
-    toc;    
+    disp('Reading in preprocessed feature match points FINISHED!');
+    toc;
 end
 %% RANSAC, (use it to get dependable inliers and good transformation matrix)
 trans_matrix = {};
-for i = 1:2-1  % a trans matrix for every 2 matrix, last is the same one as first
+for i = 1:N-1  % a trans matrix for every 2 matrix, last is the same one as first
     pos1 = cell2mat(poss{1}(i));
     pos2 = cell2mat(poss{1}(i + 1));
     match = cell2mat(matchs{1}(i));
     matchpos1 = swap_row_col(pos1(match(:,1),:));
     matchpos2 = swap_row_col(pos2(match(:,2),:));
     trans_matrix{i} = ransac(matchpos2,matchpos1);
+    fi = show_matched_features(cylin_img{i},cylin_img{i+1},swap_row_col(matchpos1),swap_row_col(matchpos2));
+    saveas(fi,['mat/feature_match_' num2str(i) '.jpg']);
 %     if i < 10
 %         save(['mat/trans_matrix_0' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
 %     else
