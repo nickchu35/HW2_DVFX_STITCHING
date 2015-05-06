@@ -1,221 +1,221 @@
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_04.jpg
-864 1296
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_02.jpg
+432 648
 
-2 0 647.5 
-0 2 431.5 
+1 0 323.5 
+0 1 215.5 
 0 0 1 
 
-0.999953 -0.00212576 -0.00942537 
-0.00866784 -0.233652 0.972282 
--0.00426907 -0.972318 -0.233623 
+0.99997 0.00241736 -0.00735756 
+0.00772393 -0.242024 0.97024 
+0.000564702 -0.970268 -0.242035 
 
-645.772
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_05.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999805 -0.019736 -0.00110074 
-0.00191834 0.0414559 0.999139 
--0.0196734 -0.998945 0.0414857 
-
-649.008
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_06.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.99969 -0.0112225 0.0222406 
--0.0174457 0.321921 0.946606 
--0.017783 -0.9467 0.321625 
-
-648.141
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_07.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999757 -0.00957755 0.0198457 
--0.0108036 0.571904 0.820249 
--0.0192058 -0.820264 0.571662 
-
-643.651
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_08.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999841 -0.00914317 0.0152901 
--0.00276015 0.768392 0.639973 
--0.0176002 -0.639914 0.768245 
-
-641.956
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_09.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999744 0.0169886 0.014944 
--0.0212553 0.931569 0.362942 
--0.00775547 -0.363167 0.931692 
-
-638.666
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_10.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.9996 -0.021883 -0.0178894 
-0.0237881 0.993158 0.114331 
-0.0152651 -0.114711 0.993282 
-
-643.221
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_11.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999148 -0.034866 -0.0220681 
-0.0307766 0.985935 -0.164273 
-0.0274853 0.163454 0.986168 
-
-633.405
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_12.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.99975 0.00063681 -0.0223455 
--0.00861957 0.93328 -0.359047 
-0.0206259 0.35915 0.933052 
-
-636.669
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_13.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999923 -0.00239272 -0.012183 
--0.00531759 0.804169 -0.594377 
-0.0112194 0.594396 0.804094 
-
-632.456
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_14.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999914 -0.0080933 -0.0103031 
--0.0027919 0.636706 -0.771102 
-0.0128008 0.771064 0.636629 
-
-629.229
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_15.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999974 -0.00230217 -0.00687107 
--0.00537873 0.399599 -0.916674 
-0.00485599 0.916687 0.399576 
-
-627.332
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_16.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999943 0.0101613 -0.00320728 
--0.00530769 0.213994 -0.976821 
--0.00923944 0.976782 0.214036 
-
-627.284
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_17.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999949 -0.00647623 -0.00767552 
--0.00750923 0.0253215 -0.999651 
-0.00666828 0.999658 0.0252714 
-
-638.396
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_18.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999986 -0.00072517 -0.00512461 
--0.00514285 -0.250533 -0.968094 
--0.000581865 0.968108 -0.250533 
-
-634.75
-
-D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_19.jpg
-864 1296
-
-2 0 647.5 
-0 2 431.5 
-0 0 1 
-
-0.999936 0.0111952 -0.00138955 
-0.0044228 -0.502358 -0.864649 
--0.010378 0.864588 -0.502375 
-
-630.542
+639.536
 
 D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_03.jpg
-864 1296
+432 648
 
-2 0 647.5 
-0 2 431.5 
+1 0 323.5 
+0 1 215.5 
 0 0 1 
 
-0.999941 -0.00950681 -0.00520297 
--0.000391299 -0.511451 0.859313 
--0.0108304 -0.85926 -0.511425 
+0.999885 -0.0151335 -0.000505398 
+0.00103978 0.0353223 0.999376 
+-0.0151062 -0.999262 0.0353343 
 
-648.774
+643.82
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_04.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999716 -0.00672829 0.0228673 
+-0.0195434 0.317876 0.947931 
+-0.0136469 -0.948109 0.317654 
+
+643.264
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_05.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999783 -0.00529488 0.0201625 
+-0.0135477 0.570067 0.821486 
+-0.0158437 -0.821581 0.569872 
+
+638.819
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_06.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999864 -0.00414741 0.015937 
+-0.00701454 0.768319 0.640029 
+-0.0148992 -0.640054 0.768186 
+
+636.775
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_07.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999635 0.0221164 0.0155245 
+-0.0262292 0.932284 0.360775 
+-0.00649418 -0.361051 0.932524 
+
+633.461
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_08.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999499 -0.0251204 -0.019271 
+0.0271084 0.993451 0.110994 
+0.0163566 -0.111461 0.993634 
+
+639.622
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_09.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.998985 -0.0385562 -0.0232875 
+0.0340777 0.985025 -0.169008 
+0.0294551 0.168043 0.98534 
+
+630.068
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_10.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.99971 -0.00235688 -0.0239487 
+-0.00653743 0.931166 -0.364536 
+0.0231594 0.364587 0.930881 
+
+633.52
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_11.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.99989 -0.00532773 -0.0138048 
+-0.0040248 0.799839 -0.600201 
+0.0142394 0.600191 0.79973 
+
+628.88
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_12.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999868 -0.0102477 -0.0126431 
+-0.00335956 0.630163 -0.776456 
+0.0159241 0.776396 0.630045 
+
+625.898
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_13.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999944 -0.00420481 -0.00968159 
+-0.00727004 0.390619 -0.920524 
+0.00765244 0.920543 0.390567 
+
+623.981
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_14.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999946 0.00832425 -0.0062294 
+-0.0077941 0.20362 -0.979019 
+-0.00688119 0.979015 0.203674 
+
+623.999
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_15.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999915 -0.00843834 -0.0099562 
+-0.00983722 0.0140256 -0.999853 
+0.00857674 0.999866 0.0139414 
+
+635.572
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_16.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999968 -0.00250039 -0.00753841 
+-0.00793044 -0.262513 -0.964896 
+0.000433703 0.964925 -0.262524 
+
+632.055
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_17.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999947 0.00959467 -0.00368987 
+0.00176534 -0.513891 -0.857854 
+-0.010127 0.857802 -0.51388 
+
+627.739
+
+D:\Nickchu\college\Senior\SecondSem\DigitalVisualEffects\HW2_DVFX_STITCHING\mrt_photos\mrt_01.jpg
+432 648
+
+1 0 323.5 
+0 1 215.5 
+0 0 1 
+
+0.999982 -0.00505527 -0.00325369 
+0.000141832 -0.521231 0.853416 
+-0.00601018 -0.853401 -0.521221 
+
+642.292
 
