@@ -8,7 +8,9 @@ N = 0; % number_of_images
 make_new_cylindrical = true;
 run_feature_detection = true;
 run_feature_matching = true;
+blend_1_by_1_and_show_result = true; % true will show blended result of every "2" images 
 feature_matching_filter_flag = 0.7;
+
 cylin_img = {};
 if make_new_cylindrical
     cylin_img = make_new_cylindrical_photos();
@@ -95,23 +97,52 @@ else
     disp('Reading in preprocessed feature match points FINISHED!');
     toc;
 end
+disp('Reading in preprocessed feature positions and matches...');
+tic;
+poss = struct2cell(load('mat/poss.mat'));
+orients = struct2cell(load('mat/orients.mat'));
+descs = struct2cell(load('mat/descs.mat'));
+matchs = struct2cell(load('mat/matchs.mat'));
+disp('Reading in preprocessed feature positions and matches FINISHED!');
+toc;
 %% RANSAC, (use it to get dependable inliers and good transformation matrix)
 trans_matrix = {};
-for i = 1:N-1  % a trans matrix for every 2 matrix, last is the same one as first
+blend_result_1_by_1 = {};
+for i = 1:2-1  % a trans matrix for every 2 matrix, last is the same one as first
+%for i = 1:1  % a trans matrix for every 2 matrix, last is the same one as first
     pos1 = cell2mat(poss{1}(i));
     pos2 = cell2mat(poss{1}(i + 1));
     match = cell2mat(matchs{1}(i));
     matchpos1 = swap_row_col(pos1(match(:,1),:));
     matchpos2 = swap_row_col(pos2(match(:,2),:));
-    trans_matrix{i} = ransac(matchpos2,matchpos1);
-    fi = show_matched_features(cylin_img{i},cylin_img{i+1},swap_row_col(matchpos1),swap_row_col(matchpos2));
-    saveas(fi,['mat/feature_match_' num2str(i) '.jpg']);
+    trans_matrix{i} = ransac(matchpos2,matchpos1, cylin_img{i}, cylin_img{i+1});
+    if blend_1_by_1_and_show_result
+        blend_result_1_by_1{i} = blend_imgs_translation_only(cylin_img{i}, cylin_img{i+1}, trans_matrix{i},0);
+        if i >= 10
+            imwrite( blend_result_1_by_1{i}, ['result_photos/1by1_blend_result/1by1_blend_' num2str(i) '.bmp']);
+        else
+            imwrite( blend_result_1_by_1{i}, ['result_photos/1by1_blend_result/1by1_blend_0' num2str(i) '.bmp']);
+        end
+    end
+%     fi = show_matched_features(cylin_img{i},cylin_img{i+1},swap_row_col(matchpos1),swap_row_col(matchpos2));
+%     saveas(fi,['mat/feature_match_' num2str(i) '.jpg']);
 %     if i < 10
 %         save(['mat/trans_matrix_0' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
 %     else
 %         save(['mat/trans_matrix_' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
 %     end
 end
+if blend_1_by_1_and_show_result
+    for i = 1: 2-1
+        figure;
+        imshow(blend_result_1_by_1{i});
+    end
+end
 %% Bundle Adjustment of the matrix
-
 %% Blending(Panoramas)
+
+
+
+
+
+
