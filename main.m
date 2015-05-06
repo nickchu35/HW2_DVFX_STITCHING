@@ -102,8 +102,11 @@ for i = 1:N-1  % a trans matrix for every 2 matrix, last is the same one as firs
     trans_matrix{i} = ransac(matchpos2,matchpos1, cylin_img{i}, cylin_img{i+1});
     if blend_1_by_1_and_show_result
         blend_result_1_by_1{i} = blend_imgs_translation_only(cylin_img{i}, cylin_img{i+1}, trans_matrix{i},0);
-        figure;
-        imshow(blend_result_1_by_1{i});
+        if i >= 10
+            imwrite( blend_result_1_by_1{i}, ['result_photos/1by1_blend_result/1by1_blend_' num2str(i) '.bmp']);
+        else
+            imwrite( blend_result_1_by_1{i}, ['result_photos/1by1_blend_result/1by1_blend_0' num2str(i) '.bmp']);
+        end
     end
 %     fi = show_matched_features(cylin_img{i},cylin_img{i+1},swap_row_col(matchpos1),swap_row_col(matchpos2));
 %     saveas(fi,['mat/feature_match_' num2str(i) '.jpg']);
@@ -113,7 +116,12 @@ for i = 1:N-1  % a trans matrix for every 2 matrix, last is the same one as firs
 %         save(['mat/trans_matrix_' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
 %     end
 end
-
+if blend_1_by_1_and_show_result
+    for i = 1: N-1
+        figure;
+        imshow(blend_result_1_by_1{i});
+    end
+end
 %% Bundle Adjustment of the matrix
 %% Blending(Panoramas)
 
