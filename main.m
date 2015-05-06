@@ -5,8 +5,8 @@ clc;
 N = 0; % number_of_images
 %% Read in photos, if already have cylindrical photos, set make_new_cylindrical to false
 % control flags
-make_new_cylindrical = false;
-run_feature_detection_to_matching = true;
+make_new_cylindrical = true;
+run_feature_detection_to_matching = false;
 cylin_img = {};
 if make_new_cylindrical
     cylin_img = make_new_cylindrical_photos();
@@ -108,18 +108,15 @@ for i = 1:2-1  % a trans matrix for every 2 matrix, last is the same one as firs
     pos1 = cell2mat(poss{1}(i));
     pos2 = cell2mat(poss{1}(i + 1));
     match = cell2mat(matchs{1}(i));
-    matchpos1 = pos1(match(:,1),:);
-    matchpos2 = pos2(match(:,2),:);
+    matchpos1 = swap_row_col(pos1(match(:,1),:));
+    matchpos2 = swap_row_col(pos2(match(:,2),:));
     trans_matrix{i} = ransac(matchpos2,matchpos1);
-    if i < 10
-        save(['mat/trans_matrix_0' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
-    else
-        save(['mat/trans_matrix_' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
-    end
+%     if i < 10
+%         save(['mat/trans_matrix_0' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
+%     else
+%         save(['mat/trans_matrix_' num2str(i) '.mat'], ['trans_matrix{' num2str(i) '}']);
+%     end
 end
 %% Bundle Adjustment of the matrix
 
 %% Blending(Panoramas)
-
-
-
