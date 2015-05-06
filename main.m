@@ -12,7 +12,7 @@ if make_new_cylindrical
     cylin_img = make_new_cylindrical_photos();
 else
     disp('Reading in preprocessed cylindrical photos...');
-    dirName = 'cylin_photos';
+    dirName = 'cylin_photos/testbmp';
     file = dir([dirName '/' '*.bmp']); % don't use jpg
     tic;
     for k = 1 : size(file,1)
@@ -26,7 +26,7 @@ N = size(cylin_img, 2);
 if run_feature_detection_to_matching
     disp('Running Harris Corner Detection and SIFT Descriptor...');
     tic;
-    for i = 1 : N
+    for i = 1 : 2
         %% Harris Corner Detection
         corner_bin_im = zeros(size(cylin_img{i},1),size(cylin_img{i},2));
         [corner_bin_im, feature_points] = harris(cylin_img{i}, 2, 1000, 2, 1); % harris(im, sigma, thresh, radius, disp)
@@ -34,21 +34,21 @@ if run_feature_detection_to_matching
         imshow(corner_bin_im);
     
         %disp('number of feature points: '); disp(size(rows,1));
-        disp('number of feature points: '); disp(size(feature_points,1));
+        disp(sprintf('image %d --> number of feature points: ', i)); disp(size(feature_points,1));
         featureX = feature_points(:,2);
         featureY = feature_points(:,1);
     
         %% remove boundary
         [featureX, featureY] = removeBoundary(cylin_img{i}, featureX, featureY);
-        disp('number of feature points after removing boundary: '); disp(numel(featureX));
+        disp(sprintf('image %d --> number of feature points after removing boundary: ', i)); disp(numel(featureX));
     
         %% remove low contrast
         [featureX, featureY] = removeLowContrast(cylin_img{i}, featureX, featureY);
-        disp('number of feature points after removing low contrast: '); disp(numel(featureX));
+        disp(sprintf('image %d --> number of feature points after removing low contrast: ', i)); disp(numel(featureX));
     
         %% remove edge
         [featureX, featureY] = removeEdge(cylin_img{i}, featureX, featureY);
-        disp('number of feature points after removing edge: '); disp(numel(featureX));
+        disp(sprintf('image %d --> number of feature points after removing edge: ', i)); disp(numel(featureX));
     
         figure, imagesc(cylin_img{i}), axis image, colormap(gray), hold on
         plot(featureX,featureY,'ys'), title('feature points');
@@ -67,14 +67,28 @@ if run_feature_detection_to_matching
     %% Feature Matching
     disp('Running Feature Matching...');
     tic;
-    for i = 1 : (N-1)
+    for i = 1 : (2-1)
         match = featureMatching(descs{i}, descs{i+1}, poss{i}, poss{i+1});
-        x = match(:,2);
-        y = match(:,1);
-        figure, imagesc(cylin_img{i}), axis image, colormap(gray), hold on
-        plot(y,x,'ys'), title('feature matching');
+%         x = match(:,1);
+%         y = match(:,2);
+%         figure, imagesc(cylin_img{i}), axis image, colormap(gray), hold on
+%         plot(poss{i}(x),poss{i}(y),'ys'), title('feature matching');
         matchs{i} = match;
     end
+    
+%     matchedPoints1 = poss{1}(matchs{1}(1:20, 1));
+%     matchedPoints2 = poss{2}(matchs{1}(1:20, 2));
+%     image1 = imread('test_photos/prtn_01.jpg');
+%     image2 = imread('test_photos/prtn_02.jpg');
+%     disp(class(int8(image1)));
+%     disp(class(matchedPoints1));
+%     figure; ax = axes;
+%     disp(class(ax));
+%     showMatchedFeatures(int8(image1),int8(image2),matchedPoints1,matchedPoints2,'montage','Parent',ax);
+%     title(ax, 'Candidate point matches');
+%     legend(ax, 'Matched points 1','Matched points 2');
+    show_matched_features(cylin_img{1}, cylin_img{2}, poss{1}, poss{2});
+    
     save('mat/matchs.mat', 'matchs');
     disp('Feature Matching done!');
     toc;
@@ -90,7 +104,7 @@ else
 end
 %% RANSAC, (use it to get dependable inliers and good transformation matrix)
 trans_matrix = {};
-for i = 1:N-1  % a trans matrix for every 2 matrix, last is the same one as first
+for i = 1:2-1  % a trans matrix for every 2 matrix, last is the same one as first
     pos1 = cell2mat(poss{1}(i));
     pos2 = cell2mat(poss{1}(i + 1));
     match = cell2mat(matchs{1}(i));

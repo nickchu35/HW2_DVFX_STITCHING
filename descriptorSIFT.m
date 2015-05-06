@@ -53,8 +53,8 @@ function [pos, orient, desc] = descriptorSIFT(im, featureX, featureY)
 
     % Create a gaussian weighting mask
     %   sigma = 1.5 * scale of the keypoint!
-    sigma = 0.75;   % FIXME
-    sz = 7;	    % FIXME
+    sigma = 1.6;   % FIXME
+    sz = 5;	    % FIXME
     hf_sz = floor(sz/2);
     g = fspecial('gaussian', [sz sz], sigma);
 

@@ -10,6 +10,7 @@ function match = featureMatching(desc1, desc2, pos1, pos2)
         [min1 min1_idx] = min(dists);
         dists(min1_idx) = [];
         min2 = min(dists);
+        % 80% peak value
         if (min1/min2) < 0.8
             match = [match; [i min1_idx]];
         end
