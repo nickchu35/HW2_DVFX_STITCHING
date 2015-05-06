@@ -17,6 +17,7 @@ function cylin_img = make_new_cylindrical_photos()
     tic;
     focal_length = get_focal_length(size(file,1), [dirName '/pano.txt']);
     cylin_img = {};
+    % cylin_path = 'cylin_photos/ourPicsLess/cylin_';
     cylin_path = 'cylin_photos/cylin_';
     for k = 1 : size(file,1)
         cylin_img{k} = cylinder_reproject(img{k}, size(img{k},2), size(img{k},1), focal_length);
