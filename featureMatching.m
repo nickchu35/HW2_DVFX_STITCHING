@@ -1,19 +1,23 @@
 function match = featureMatching(desc1, desc2, pos1, pos2, filter, img)
-
+    width = size(img,2);
     match = [];
+    x = [];
+    y = [];
 
     for i = 1:size(desc1, 1)
         dists = [];
         for j = 1:size(desc2, 1)
-%             disp(class(cell2mat(pos1(i))));
-%             [x1,y1] = cell2mat(pos1(i));
-%             [x2,y2] = cell2mat(pos2(j));
-%             if (x1 > filter) && (x2 < filter)
-%                 dists = [dists; descriptorDistance(desc1(i,:), desc2(j,:))];
-%             else
-%                 dists = [dists; 10000];
-%             end
-            dists = [dists; descriptorDistance(desc1(i,:), desc2(j,:))];
+            x1 = pos1(i,1);
+            x2 = pos2(j,1);
+            y1 = pos1(i,2);
+            if (x1 > (width * (1 - filter))) && (x2 < (width * filter))
+                x = [x; x1];
+                y = [y; y1];
+                dists = [dists; descriptorDistance(desc1(i,:), desc2(j,:))];
+            else
+                dists = [dists; []];
+            end
+            % dists = [dists; descriptorDistance(desc1(i,:), desc2(j,:))];
         end
         [min1 min1_idx] = min(dists);
         dists(min1_idx) = [];
@@ -23,4 +27,7 @@ function match = featureMatching(desc1, desc2, pos1, pos2, filter, img)
             match = [match; [i min1_idx]];
         end
     end
+    
+    figure, imagesc(img), axis image, colormap(gray), hold on
+    plot(x,y,'ys'), title('feature points after filtering');
 end

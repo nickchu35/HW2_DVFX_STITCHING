@@ -64,11 +64,6 @@ function [pos, orient, desc] = descriptorSIFT(im, featureX, featureY)
         x = featureX(k);
         y = featureY(k);
 
-%         disp([y, x]);
-%         disp(y-hf_sz);
-%         disp(y+hf_sz);
-%         disp(x-hf_sz);
-%         disp(x+hf_sz);
         weightedMag = g .* mag((y-hf_sz):(y+hf_sz), (x-hf_sz):(x+hf_sz));
         grad_window = L((y-hf_sz):(y+hf_sz), (x-hf_sz):(x+hf_sz));
         orient_hist = zeros(length(hist_orient), 1);

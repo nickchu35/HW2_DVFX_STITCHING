@@ -2,7 +2,8 @@
 % return the cell of cylindrical images.
 function cylin_img = make_new_cylindrical_photos()
     % dirName = 'test_photos';
-    dirName = 'mrt_photos';
+    % dirName = 'mrt_photos';
+    dirName = 'lib_out_photos';
     file = dir([dirName '/' '*.jpg']);
     img = {};
     disp('Reading images...');
@@ -16,6 +17,8 @@ function cylin_img = make_new_cylindrical_photos()
     disp('Cylinder reprojection start......');
     tic;
     focal_length = get_focal_length(size(file,1), [dirName '/pano.txt']);
+%     disp(focal_length);
+%     disp(size(img{1},2));
     cylin_img = {};
     % cylin_path = 'cylin_photos/ourPicsLess/cylin_';
     cylin_path = 'cylin_photos/cylin_';

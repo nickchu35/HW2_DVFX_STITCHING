@@ -16,7 +16,7 @@ if make_new_cylindrical
     cylin_img = make_new_cylindrical_photos();
 else
     disp('Reading in preprocessed cylindrical photos...');
-    dirName = 'cylin_photos/testbmp';
+    dirName = 'cylin_photos/lib_out';
     file = dir([dirName '/' '*.bmp']); % don't use jpg
     tic;
     for k = 1 : size(file,1)
@@ -30,14 +30,13 @@ N = size(cylin_img, 2);
 if run_feature_detection
     disp('Running Harris Corner Detection and SIFT Descriptor...');
     tic;
-    for i = 1 : 2
+    for i = 1 : N
         %% Harris Corner Detection
         corner_bin_im = zeros(size(cylin_img{i},1),size(cylin_img{i},2));
         [corner_bin_im, feature_points] = harris(cylin_img{i}, 2, 1000, 2, 1); % harris(im, sigma, thresh, radius, disp)
         figure;
         imshow(corner_bin_im);
     
-        %disp('number of feature points: '); disp(size(rows,1));
         disp(sprintf('image %d --> number of feature points: ', i)); disp(size(feature_points,1));
         featureX = feature_points(:,2);
         featureY = feature_points(:,1);
@@ -68,54 +67,47 @@ if run_feature_detection
     save('mat/descs.mat', 'descs');
     disp('Harris Corner Detection and SIFT Descriptor done!');
     toc;
-else
-    disp('Reading in preprocessed feature positions ...');
-    tic;
-    poss = struct2cell(load('mat/poss.mat'));
-    orients = struct2cell(load('mat/orients.mat'));
-    descs = struct2cell(load('mat/descs.mat'));
-    disp('Reading in preprocessed feature positions FINISHED!');
-    toc;    
 end
+disp('Reading in preprocessed feature positions ...');
+tic;
+poss = struct2cell(load('mat/poss.mat'));
+orients = struct2cell(load('mat/orients.mat'));
+descs = struct2cell(load('mat/descs.mat'));
+disp('Reading in preprocessed feature positions FINISHED!');
+toc;
 %% Feature Matching
 if run_feature_matching
     disp('Running Feature Matching...');
     tic;
-    for i = 1 : (2-1)
-        filter = size(cylin_img{i},2) * (1-feature_matching_filter_flag);
-        match = featureMatching(descs{i}, descs{i+1}, poss{i}, poss{i+1}, filter, cylin_img{i});
+    for i = 1 : (N-1)
+        match_desc1 = cell2mat(descs{1}(i));
+        match_desc2 = cell2mat(descs{1}(i + 1));
+        match_pos1 = cell2mat(poss{1}(i));
+        match_pos2 = cell2mat(poss{1}(i + 1));
+        
+        match = featureMatching(match_desc1, match_desc2, match_pos1, match_pos2, feature_matching_filter_flag, cylin_img{i});
         matchs{i} = match;
     end
     
     save('mat/matchs.mat', 'matchs');
     disp('Feature Matching done!');
     toc;
-else
-    disp('Reading in preprocessed feature match points ...');
-    tic;
-    matchs = struct2cell(load('mat/matchs.mat'));
-    disp('Reading in preprocessed feature match points FINISHED!');
-    toc;
 end
-disp('Reading in preprocessed feature positions and matches...');
+disp('Reading in preprocessed feature matches...');
 tic;
-poss = struct2cell(load('mat/poss.mat'));
-orients = struct2cell(load('mat/orients.mat'));
-descs = struct2cell(load('mat/descs.mat'));
 matchs = struct2cell(load('mat/matchs.mat'));
-disp('Reading in preprocessed feature positions and matches FINISHED!');
+disp('Reading in preprocessed feature matches FINISHED!');
 toc;
 %% RANSAC, (use it to get dependable inliers and good transformation matrix)
 trans_matrix = {};
 blend_result_1_by_1 = {};
-for i = 1:2-1  % a trans matrix for every 2 matrix, last is the same one as first
-%for i = 1:1  % a trans matrix for every 2 matrix, last is the same one as first
+for i = 1 : (N-1)  % a trans matrix for every 2 matrix, last is the same one as first
     pos1 = cell2mat(poss{1}(i));
     pos2 = cell2mat(poss{1}(i + 1));
     match = cell2mat(matchs{1}(i));
     matchpos1 = swap_row_col(pos1(match(:,1),:));
     matchpos2 = swap_row_col(pos2(match(:,2),:));
-    trans_matrix{i} = ransac(matchpos2,matchpos1, cylin_img{i}, cylin_img{i+1});
+    trans_matrix{i} = ransac(matchpos2, matchpos1, cylin_img{i}, cylin_img{i+1});
     if blend_1_by_1_and_show_result
         blend_result_1_by_1{i} = blend_imgs_translation_only(cylin_img{i}, cylin_img{i+1}, trans_matrix{i},0);
         if i >= 10
@@ -133,7 +125,7 @@ for i = 1:2-1  % a trans matrix for every 2 matrix, last is the same one as firs
 %     end
 end
 if blend_1_by_1_and_show_result
-    for i = 1: 2-1
+    for i = 1 : (N-1)
         figure;
         imshow(blend_result_1_by_1{i});
     end
