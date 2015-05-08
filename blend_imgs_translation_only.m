@@ -22,11 +22,11 @@ function [blended_result i_shift] = blend_imgs_translation_only(im_l, im_r, tran
                     result(i + i_add, j, :) = im_l(i,j,:);
                 else % need to make sure the point is not zero!!!!!!!!!!!!!!!
                     % use distance to 2 center
-%                     d1 = distance([i+i_add j], center1);
-%                     d2 = distance([i+i_add j], center2);
+                    d1 = distance([i+i_add j], center1);
+                    d2 = distance([i+i_add j], center2);
                     % use x coordinate only
-                    d1 = j - abs(ty);
-                    d2 = size(im_l,2) - j;
+%                     d1 = j - abs(ty);
+%                     d2 = size(im_l,2) - j;
                     temp = result(i + i_add, j, :);
                     if im_l(i,j,:)== 0
                         d1 = 0;
@@ -39,11 +39,11 @@ function [blended_result i_shift] = blend_imgs_translation_only(im_l, im_r, tran
                     result(i + tx, j + ty, :) = im_r(i,j,:);
                 else % need to make sure the point is not zero!!!!!!!!!!!!!!!
                     % use distance to 2 center
-%                     d1 = distance([i+tx j+ty], center1);
-%                     d2 = distance([i+tx j+ty], center2);
+                    d1 = distance([i+tx j+ty], center1);
+                    d2 = distance([i+tx j+ty], center2);
                     % use x coordinate only
-                    d1 = j + ty - abs(ty);
-                    d2 = size(im_l,2) - j - ty;
+%                     d1 = j + ty - abs(ty);
+%                     d2 = size(im_l,2) - j - ty;
                     temp = result(i + tx, j + ty, :);
                     if im_r(i,j,:) == 0
                         d2 = 0;

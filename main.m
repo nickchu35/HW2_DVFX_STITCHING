@@ -5,10 +5,10 @@ clc;
 N = 0; % number_of_images
 %% Read in photos, if already have cylindrical photos, set make_new_cylindrical to false
 % control flags
-make_new_cylindrical = true;
-run_feature_detection = true;
-run_feature_matching = true;
-blend_1_by_1_and_show_result = true; % true will show blended result of every "2" images 
+make_new_cylindrical = false;
+run_feature_detection = false;
+run_feature_matching = false;
+blend_1_by_1_and_show_result = false; % true will show blended result of every "2" images 
 feature_matching_filter_flag = 0.7;
 
 cylin_img = {};
@@ -16,7 +16,7 @@ if make_new_cylindrical
     cylin_img = make_new_cylindrical_photos();
 else
     disp('Reading in preprocessed cylindrical photos...');
-    dirName = 'cylin_photos/lib_out';
+    dirName = 'cylin_photos';
     file = dir([dirName '/' '*.bmp']); % don't use jpg
     tic;
     for k = 1 : size(file,1)
@@ -132,9 +132,10 @@ if blend_1_by_1_and_show_result
 end
 %% Bundle Adjustment of the matrix
 %% Blending(Panoramas)
-
-
-
-
-
-
+disp('Image stitching started!!!');
+tic;
+blended_result = generate_panorama(cylin_img, trans_matrix, N);
+disp('Image stitching finished! Writing to file!');
+toc;
+figure; imshow(blended_result);
+imwrite( blended_result, 'result_photos/panorama/panorama.bmp');
