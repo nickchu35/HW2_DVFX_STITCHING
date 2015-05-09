@@ -1,520 +1,325 @@
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_02.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_02.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.984889 -0.163743 -0.0564149 
--0.0300949 -0.482596 0.875326 
--0.170554 -0.860401 -0.480231 
+0.982643 0.0779838 0.16832 
+-0.0768644 0.996955 -0.0131663 
+-0.168834 -7.62074e-008 0.985644 
 
-627.663
+524.49
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_03.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_03.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.984761 -0.169299 -0.0398051 
--0.0252882 -0.365832 0.930337 
--0.172067 -0.915153 -0.364538 
+0.982684 0.121535 0.139862 
+-0.0754725 0.951919 -0.296906 
+-0.169222 0.281209 0.944609 
 
-628.475
+524.855
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_04.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_04.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.984995 -0.171332 -0.0207216 
--0.0249437 -0.260143 0.965248 
--0.170768 -0.950248 -0.260514 
+0.98238 0.15631 0.102458 
+-0.0726519 0.824473 -0.561217 
+-0.172198 0.543885 0.821302 
 
-629.009
+525.191
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_05.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_05.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.985005 -0.172408 -0.00642204 
--0.0235225 -0.171078 0.984977 
--0.170917 -0.970056 -0.172568 
+0.983622 0.171246 0.056234 
+-0.064522 0.62585 -0.777269 
+-0.168298 0.760911 0.626649 
 
-629.731
+525.966
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_06.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_06.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986037 -0.166126 0.0115243 
--0.0195707 -0.0468797 0.998709 
--0.165371 -0.984989 -0.0494763 
+0.983384 0.181046 0.0133643 
+-0.0640662 0.414982 -0.907571 
+-0.169858 0.891635 0.419686 
 
-630.73
+525.289
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_07.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_07.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986613 -0.159807 0.0324993 
--0.0192701 0.0836457 0.996309 
--0.161935 -0.983598 0.0794464 
+0.983051 0.180365 -0.0328465 
+-0.068862 0.197229 -0.977936 
+-0.169907 0.963623 0.206306 
 
-631.884
+527.25
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_08.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_08.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986377 -0.158384 0.0444508 
--0.0145267 0.185294 0.982576 
--0.16386 -0.969835 0.180469 
+0.982537 0.167966 -0.0800521 
+-0.0674302 -0.0795574 -0.994547 
+-0.173418 0.982577 -0.0668422 
 
-632.706
+525.987
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_09.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_09.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986471 -0.152387 0.0604432 
--0.0124972 0.297724 0.95457 
--0.16346 -0.942411 0.291791 
+0.983441 0.143489 -0.110701 
+-0.0665704 -0.282116 -0.957068 
+-0.168559 0.94859 -0.267892 
 
-633.352
+526.735
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_10.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_10.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.98644 -0.14215 0.0820278 
--0.0159768 0.414258 0.910019 
--0.16334 -0.898991 0.406369 
+0.982997 0.114906 -0.143225 
+-0.0653579 -0.50997 -0.857705 
+-0.171596 0.852483 -0.493789 
 
-633.553
+527.726
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_11.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_11.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986438 -0.136269 0.0914963 
--0.011046 0.501063 0.86534 
--0.163764 -0.854615 0.492762 
+0.982859 0.0790004 -0.166575 
+-0.0633782 -0.703679 -0.707685 
+-0.173123 0.706112 -0.686611 
 
-634.143
+528.129
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_12.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_12.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986717 -0.120393 0.10906 
--0.0126281 0.612482 0.790384 
--0.161954 -0.781263 0.602826 
+0.983542 0.0318224 -0.177856 
+-0.059498 -0.872422 -0.485118 
+-0.170604 0.487716 -0.85617 
 
-634.9
+529.985
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_13.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_13.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986721 -0.106032 0.123039 
--0.0143467 0.697662 0.716283 
--0.161789 -0.708537 0.686877 
+0.983691 -0.00940255 -0.179621 
+-0.0577078 -0.962338 -0.26566 
+-0.170359 0.271693 -0.947186 
 
-635.317
+530.975
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_14.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_14.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.987144 -0.0884806 0.13311 
--0.0119424 0.789641 0.613453 
--0.159388 -0.607156 0.778432 
+0.984243 -0.0418113 -0.171805 
+-0.0559766 -0.995345 -0.0784485 
+-0.167726 0.0868296 -0.982002 
 
-636.314
+531.625
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_15.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_15.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.986999 -0.0737429 0.142812 
--0.0121211 0.851855 0.523638 
--0.16027 -0.518561 0.839886 
+0.984366 -0.0701291 -0.161571 
+-0.0539099 -0.993253 0.102672 
+-0.167681 -0.092357 -0.981506 
 
-637.123
+530.05
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_16.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_16.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.987216 -0.0503 0.151246 
--0.0133544 0.919461 0.392954 
--0.15883 -0.38995 0.907035 
+0.98498 -0.106668 -0.135783 
+-0.0507116 -0.930397 0.363029 
+-0.165056 -0.350691 -0.921831 
 
-638.085
+535.213
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_17.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_17.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.987268 -0.0283095 0.156526 
--0.0134529 0.965649 0.259501 
--0.158496 -0.258303 0.952973 
+0.985354 -0.130921 -0.109258 
+-0.0502404 -0.835179 0.547679 
+-0.162952 -0.534168 -0.829524 
 
-639.235
+535.567
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_18.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_18.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.987535 -0.0108254 0.157024 
--0.0104825 0.990893 0.134239 
--0.157047 -0.134212 0.978429 
+0.985603 -0.157323 -0.0619326 
+-0.053653 -0.638398 0.767834 
+-0.160336 -0.753457 -0.637648 
 
-640.344
+536.768
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_19.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_19.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.987778 0.0065399 0.155728 
--0.0121018 0.999321 0.0347942 
--0.155395 -0.0362535 0.987187 
+0.986051 -0.164162 -0.0274902 
+-0.0561857 -0.483743 0.873405 
+-0.156678 -0.859677 -0.486218 
 
-641.377
+538.236
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_20.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_20.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.987852 0.0257522 0.15325 
--0.00914988 0.994101 -0.10807 
--0.155129 0.105355 0.98226 
+0.985588 -0.168424 0.0158107 
+-0.062542 -0.275946 0.959136 
+-0.157179 -0.946302 -0.282503 
 
-642.463
+539.513
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_21.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_21.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.988149 0.0438067 0.14711 
--0.00982596 0.974497 -0.224186 
--0.153179 0.220084 0.963379 
+0.986174 -0.158601 0.048036 
+-0.0594279 -0.0678815 0.995922 
+-0.154694 -0.985006 -0.0763682 
 
-643.725
+539.814
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_22.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_22.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.988692 0.070531 0.132338 
--0.00850649 0.907447 -0.420081 
--0.149719 0.414205 0.897785 
+0.986211 -0.135294 0.0953096 
+-0.0671619 0.199157 0.977663 
+-0.151253 -0.970583 0.187325 
 
-645.849
+540.661
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_23.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_23.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.98892 0.0853342 0.121472 
--0.0088339 0.850648 -0.525662 
--0.148187 0.518764 0.841976 
+0.986052 -0.111263 0.12378 
+-0.0693569 0.401368 0.913287 
+-0.151296 -0.909134 0.388053 
 
-646.779
+540.623
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_24.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_24.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.988993 0.0890869 0.118138 
--0.00290779 0.809978 -0.586454 
--0.147935 0.579655 0.801321 
+0.986095 -0.0872172 0.141457 
+-0.0702633 0.552568 0.8305 
+-0.150598 -0.828891 0.538757 
 
-647.934
+542.11
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_25.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_25.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.989077 0.104026 0.104425 
--0.0054138 0.73362 -0.679539 
--0.147298 0.671551 0.726169 
+0.98543 -0.0504376 0.162428 
+-0.0772838 0.717937 0.691805 
+-0.151506 -0.694279 0.703579 
 
-648.701
+543.161
 
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_26.jpg
+C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_25\lib_25_01.jpg
 432 648
 
 1 0 323.5 
 0 1 215.5 
 0 0 1 
 
-0.989492 0.111357 0.0922201 
--0.00452139 0.661346 -0.750067 
--0.144514 0.741769 0.654901 
+0.983623 0.020335 0.179088 
+-0.0686898 0.960922 0.268162 
+-0.166636 -0.276072 0.946582 
 
-648.858
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_27.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.989742 0.119614 0.0781148 
--0.00485562 0.574636 -0.818395 
--0.142779 0.809621 0.569322 
-
-650.274
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_28.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.989936 0.126385 0.0636562 
--0.00472824 0.479124 -0.877735 
--0.141432 0.868601 0.4749 
-
-653.345
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_29.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990457 0.1328 0.0368485 
--0.0118427 0.348395 -0.937273 
--0.137308 0.927893 0.346643 
-
-653.666
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_30.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990634 0.134856 0.0213963 
--0.00936649 0.223447 -0.974671 
--0.136221 0.965342 0.222617 
-
-653.509
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_31.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990623 0.136612 -0.001453 
--0.014862 0.0971867 -0.995155 
--0.135809 0.985846 0.0983054 
-
-653.388
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_32.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990537 0.135571 -0.0213623 
--0.018928 -0.0192181 -0.999636 
--0.135932 0.990581 -0.0164705 
-
-653.486
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_33.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990556 0.131968 -0.0371747 
--0.0220617 -0.114186 -0.993214 
--0.135318 0.984655 -0.110197 
-
-653.747
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_34.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990589 0.127525 -0.0496976 
--0.0224274 -0.206959 -0.978093 
--0.135016 0.970003 -0.202151 
-
-654.391
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_35.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.99045 0.119349 -0.0690236 
--0.0258083 -0.331292 -0.943175 
--0.135434 0.935949 -0.325049 
-
-655.745
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_36.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990552 0.110869 -0.0807136 
--0.0244072 -0.436638 -0.899306 
--0.134948 0.89278 -0.429807 
-
-656.432
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_37.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.99083 0.0951974 -0.0958824 
--0.0285754 -0.545942 -0.837335 
--0.132059 0.832397 -0.538216 
-
-657.245
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_38.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990674 0.0885371 -0.103565 
--0.0287611 -0.607086 -0.794116 
--0.133182 0.789688 -0.598878 
-
-657.806
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_39.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.9904 0.0793387 -0.113197 
--0.0285552 -0.6838 -0.729111 
--0.135251 0.725343 -0.67497 
-
-658.445
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_40.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.990503 0.0721703 -0.117026 
--0.0280309 -0.727279 -0.68577 
--0.134603 0.682537 -0.718349 
-
-659.063
-
-C:\Users\Nick\Dropbox\DigitalVisualEffects\HW2_DVFX_STITCHING\source_photos\lib_40\lib_40_01.jpg
-432 648
-
-1 0 323.5 
-0 1 215.5 
-0 0 1 
-
-0.985019 -0.149389 -0.086137 
--0.0389438 -0.679318 0.73281 
--0.167988 -0.718477 -0.674959 
-
-627.176
+522.944
 

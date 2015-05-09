@@ -21,7 +21,6 @@ function panorama = generate_panorama( cylin_img, trans, N)
         elseif tx_sum{i} > tx_max
             tx_max = tx_sum{i};
         end
-        % tx_sum{i} % print it out
     end
     
     for i = 1:N
@@ -51,13 +50,36 @@ function panorama = generate_panorama( cylin_img, trans, N)
                     if result(x2 - row/2 + i, y2 - col/2 + j, :) == 0
                         result(x2 - row/2 + i, y2 - col/2 + j, :) = cylin_img{k}(i, j, :);
                     else
-                        % use distance to 2 center
-                        d1 = distance([x2-row/2+i y2-col/2+j], center{k});
-                        d2 = distance([x2-row/2+i y2-col/2+j], center{k-1});
-                        % use x coordinate only
-%                     
-%                     
-                        result(x2 - row/2 + i, y2 - col/2 + j, :) = cylin_img{k}(i, j, :)*(d2/(d1+d2)) + result(x2 - row/2 + i, y2 - col/2 + j, :)*(d1/(d1+d2));
+                        % use distance to 2 center - (1)
+%                         d1 = distance([x2-row/2+i y2-col/2+j], center{k-1});
+%                         d2 = distance([x2-row/2+i y2-col/2+j], center{k-2});
+                        % use x coordinate only - (2)
+                        d1 = j;
+                        if k ~= 2
+                            d2 = col - j - (ty_sum{k-1} - ty_sum{k-2});
+                        else
+                            d2 = col - j - ty_sum{k-1};
+                        end
+                        % use the square root of x and y difference -  (3 , has to be used with (2))
+%                         if k ~= 2 
+%                             if tx_sum{k-1} < tx_sum{k-2}
+%                                 d1 = (d1^2 + (row - i)^2)^(0.5);
+%                                 d2 = (d2^2 + (i - (tx_sum{k-2} - tx_sum{k-1}))^2)^(0.5);
+%                             else
+%                                 d1 = (d1^2 + i^2)^(0.5);
+%                                 d2 = (d2^2 + (row - i - (tx_sum{k-1} - tx_sum{k-2}))^2)^(0.5);
+%                             end
+%                         else
+%                             if tx_sum{1} < 0
+%                                 d1 = (d1^2 + (row - i)^2)^(0.5);
+%                                 d2 = (d2^2 + (i + tx_sum{1})^2)^(0.5);
+%                             else
+%                                 d1 = (d1^2 + i^2)^(0.5);
+%                                 d2 = (d2^2 + (row - i - tx_sum{1})^2)^(0.5);
+%                             end
+%                         end
+                        %
+                        result(x2 - row/2 + i, y2 - col/2 + j, :) = cylin_img{k}(i, j, :)*(d1/(d1+d2)) + result(x2 - row/2 + i, y2 - col/2 + j, :)*(d2/(d1+d2));
                     end
                 end
             end
