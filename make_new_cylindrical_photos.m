@@ -3,7 +3,8 @@
 function cylin_img = make_new_cylindrical_photos()
     % dirName = 'test_photos';
     % dirName = 'mrt_photos';
-    dirName = 'lib_out_photos';
+    % dirName = 'lib_out_photos';
+    dirName = 'source_photos';
     file = dir([dirName '/' '*.jpg']);
     img = {};
     disp('Reading images...');

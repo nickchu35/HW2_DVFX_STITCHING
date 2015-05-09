@@ -11,7 +11,8 @@ function inlier_trans = ransac(pos1, pos2, img_r, img_l) % (feature_right, featu
 	n = 2;
 	P = 0.999999999999;
     k = ceil(log(1-P)/log(1-p^n)); % run k times
-    threshold = 15.125;	% !!!!!!!!!!!!!!!!!FIXME!!!!!!!!!!!!!!!!!
+    % threshold = 15.125;	% !!!!!!!FIXME!!!!!!!!! lib_out
+    threshold = 2.21;
     N = size(pos1,1); % number of matched feature points
     
     best_set_num_array = [];
